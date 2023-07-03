@@ -12,7 +12,7 @@ const NavBar = () => {
         <li>submit</li>
       </ul>
       <input type="text" placeholder="search"></input>
-      <a href="">ligin</a>
+      <a href="">login</a>
     </nav>
   );
 };

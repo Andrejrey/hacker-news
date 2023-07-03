@@ -7,6 +7,11 @@ import axios from "axios";
 function App() {
   const [post, setPost] = useState([]);
   const [searchValue, setSearchValue] = useState("react");
+  console.log("searchValue", searchValue);
+
+  function addQuery(value) {
+    setSearchValue(value);
+  }
 
   useEffect(() => {
     axios
@@ -14,11 +19,11 @@ function App() {
       .then((response) => {
         setPost(response.data.hits);
       });
-  }, []);
+  }, [searchValue]);
 
   return (
     <>
-      <NavBar setSearchValue={setSearchValue} />
+      <NavBar setSearchValue={setSearchValue} addQuery={addQuery} />
       <NewsList news={post} />
     </>
   );

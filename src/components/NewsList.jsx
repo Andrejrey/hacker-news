@@ -1,11 +1,12 @@
 const NewsList = ({ news }) => {
+  console.log(news);
   return (
     <main>
       <ul>
-        {news.map((e) => (
-          <li key={e.id}>
-            <a href={e.story_url}>{e.story_url}</a>
-            {e.author}
+        {news.map(({ story_url, story_title, author, created_at }, index) => (
+          <li key={index}>
+            <a href={story_url}>{story_title}</a>
+            <p>Author: {author}</p>
           </li>
         ))}
       </ul>

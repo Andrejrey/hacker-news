@@ -5,22 +5,21 @@ import NewsList from "./components/NewsList";
 import axios from "axios";
 
 function App() {
-  const [post, setPost] = useState({});
-
-  console.log("post", post);
+  const [post, setPost] = useState([]);
+  const [searchValue, setSearchValue] = useState("react");
 
   useEffect(() => {
     axios
-      .get("http://hn.algolia.com/api/v1/search_by_date?query=story")
+      .get(`http://hn.algolia.com/api/v1/search_by_date?query=${searchValue}`)
       .then((response) => {
-        setPost(response.data);
+        setPost(response.data.hits);
       });
   }, []);
 
   return (
     <>
-      <NavBar />
-      <NewsList />
+      <NavBar setSearchValue={setSearchValue} />
+      <NewsList news={post} />
     </>
   );
 }

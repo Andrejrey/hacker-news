@@ -1,8 +1,13 @@
-const NewsList = () => {
+const NewsList = ({ news }) => {
   return (
     <main>
       <ul>
-        <li>Hello</li>
+        {news.map((e) => (
+          <li key={e.id}>
+            <a href={e.story_url}>{e.story_url}</a>
+            {e.author}
+          </li>
+        ))}
       </ul>
     </main>
   );

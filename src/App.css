@@ -41,10 +41,30 @@ nav button:hover {
 nav input {
   border: none;
   border-radius: 5px;
+  height: 25px;
+}
+
+nav input:focus {
+  outline: none;
+}
+
+nav form button {
+  background-color: white;
+  margin-left: 5px;
+  color: orange;
+}
+
+nav form button:hover {
+  background-color: rgb(249, 217, 191);
 }
 
 nav input::placeholder {
   padding-left: 15px;
+}
+
+p {
+  margin-top: 5px;
+  color: grey;
 }
 
 main {

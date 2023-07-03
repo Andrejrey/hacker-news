@@ -1,4 +1,19 @@
-const NavBar = () => {
+import { useState } from "react";
+
+const NavBar = ({ addQuery }) => {
+  const [value, setValue] = useState("");
+  console.log("value", value);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    if (!value) {
+      alert("Type something...");
+    } else {
+      addQuery(value);
+      setValue("");
+    }
+  }
+
   return (
     <nav>
       <h3>Hacker News</h3>
@@ -25,8 +40,16 @@ const NavBar = () => {
           <button>Submit</button>
         </li>
       </ul>
-      <input type="text" placeholder="search"></input>
-      <button href="">Login</button>
+      <form onSubmit={handleSubmit}>
+        <input
+          onChange={(event) => setValue(event.target.value)}
+          type="text"
+          placeholder="search"
+          value={value}
+        ></input>
+        <button>Search</button>
+      </form>
+      <button>Login</button>
     </nav>
   );
 };

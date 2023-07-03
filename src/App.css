@@ -12,13 +12,36 @@ nav {
   justify-content: space-around;
   background-color: orange;
   padding: 10px;
+  border-radius: 5px;
 }
 
-ul {
+nav ul {
   display: flex;
   list-style: none;
 }
 
-li {
+nav li {
   padding: 0px 15px 0px 15px;
+}
+nav button {
+  border: none;
+  background-color: orange;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+nav button:hover {
+  background-color: darkorange;
+}
+
+nav input {
+  border: none;
+  border-radius: 5px;
+}
+
+nav input::placeholder {
+  padding-left: 15px;
 }

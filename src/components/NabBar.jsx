@@ -3,16 +3,30 @@ const NavBar = () => {
     <nav>
       <h3>Hacker News</h3>
       <ul>
-        <li>new</li>
-        <li>past</li>
-        <li>comments</li>
-        <li>ask</li>
-        <li>show</li>
-        <li>jobs</li>
-        <li>submit</li>
+        <li>
+          <button>New</button>
+        </li>
+        <li>
+          <button>Past</button>
+        </li>
+        <li>
+          <button>Comments</button>
+        </li>
+        <li>
+          <button>Ask</button>
+        </li>
+        <li>
+          <button>Show</button>
+        </li>
+        <li>
+          <button>Jobs</button>
+        </li>
+        <li>
+          <button>Submit</button>
+        </li>
       </ul>
       <input type="text" placeholder="search"></input>
-      <a href="">login</a>
+      <button href="">Login</button>
     </nav>
   );
 };

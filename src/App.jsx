@@ -3,6 +3,7 @@ import "./App.css";
 import NavBar from "./components/NabBar";
 import NewsList from "./components/NewsList";
 import axios from "axios";
+import SearchTitle from "./components/SearchTitle";
 
 function App() {
   const [post, setPost] = useState([]);
@@ -24,6 +25,7 @@ function App() {
   return (
     <>
       <NavBar setSearchValue={setSearchValue} addQuery={addQuery} />
+      <SearchTitle searchValue={searchValue} />
       <NewsList news={post} />
     </>
   );

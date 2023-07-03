@@ -1,10 +1,10 @@
 const NewsList = () => {
   return (
-    <div>
+    <main>
       <ul>
-        <li></li>
+        <li>Hello</li>
       </ul>
-    </div>
+    </main>
   );
 };
 

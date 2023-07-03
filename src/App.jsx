@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import NavBar from "./components/NabBar";
+import NewsList from "./components/NewsList";
 import axios from "axios";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
   return (
     <>
       <NavBar />
+      <NewsList />
     </>
   );
 }

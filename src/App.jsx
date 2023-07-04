@@ -1,14 +1,16 @@
-import { useEffect, useState } from "react";
 import "./App.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import NavBar from "./components/NabBar";
 import NewsList from "./components/NewsList";
-import axios from "axios";
 import SearchTitle from "./components/SearchTitle";
+import Pagination from "./Pagination";
 
 function App() {
   const [post, setPost] = useState([]);
   const [searchValue, setSearchValue] = useState("react");
-  console.log("searchValue", searchValue);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postPerPage, setPostPerPage] = useState(10);
 
   function addQuery(value) {
     setSearchValue(value);
@@ -22,11 +24,21 @@ function App() {
       });
   }, [searchValue]);
 
+  const lastPostIndex = currentPage * postPerPage;
+  const firstPostIndex = lastPostIndex - postPerPage;
+  const currentPosts = post.slice(firstPostIndex, lastPostIndex);
+
   return (
     <>
       <NavBar setSearchValue={setSearchValue} addQuery={addQuery} />
       <SearchTitle searchValue={searchValue} />
-      <NewsList news={post} />
+      <NewsList news={currentPosts} />
+      <Pagination
+        totalPosts={post.length}
+        postPerPage={postPerPage}
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+      />
     </>
   );
 }

@@ -3,7 +3,7 @@ const NewsList = ({ news }) => {
   return (
     <main>
       <ul>
-        {news.map(({ story_url, story_title, author, created_at }, index) => (
+        {news?.map(({ story_url, story_title, author, created_at }, index) => (
           <li key={index}>
             <a href={story_url}>{story_title}</a>
             <p>Author: {author}</p>

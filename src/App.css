@@ -84,3 +84,23 @@ h2 {
   margin: 10px 0px 10px 0px;
   text-transform: capitalize;
 }
+
+.pagination button.active {
+  background-color: orange;
+  color: white;
+}
+
+.pagination button {
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid orange;
+  border-radius: 5px;
+  background-color: white;
+  font-weight: 900;
+}
+
+.pagination {
+  background-color: #f6f6ef;
+  display: flex;
+  justify-content: center;
+}
